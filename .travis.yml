@@ -1,0 +1,26 @@
+os: linux
+dist: xenial
+language: python
+addons:
+  apt:
+    packages:
+      - libgnutls-dev
+  
+  
+before_install:
+  - python --version
+  - pip install -U pytest
+  - pip install pytest-cov
+install:
+#   - pip install ".[test]" . # install package + test dependencies
+  
+script: 
+  - python3 -m pytest
+  - pytest --cov=./ --cov-report=xml
+# script: pytest # run tests
+
+token: 
+  - ${{ secrets.CODECOV_TOKEN }}
+
+after_success:
+  - codecov # submit coverage
