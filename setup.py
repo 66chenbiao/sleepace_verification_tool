@@ -126,18 +126,18 @@ if (
 
 
 if setuptools is not None:
-    python_requires = ">= 3.8"
+    python_requires = ">= 3.6"
     kwargs["python_requires"] = python_requires
 
 setup(
-    name="python_code",
+    name="sleepace_verification_tool",
     version=version,
     packages=["slp_utils"],
     package_data={
         # data files need to be listed both here (which determines what gets
         # installed) and in MANIFEST.in (which determines what gets included
         # in the sdist tarball)
-        "python_code": ["py.typed"],
+        "sleepace_verification_tool": ["py.typed"],
     },
     author="chenbiao",
     author_email="chenbiao@sleepace.net",
