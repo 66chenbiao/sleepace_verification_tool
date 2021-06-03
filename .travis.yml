@@ -3,8 +3,8 @@ dist: focal
 language: python
 addons:
   apt:
-    packages:
-      - slp_utils
+#     packages:
+#       - slp_utils
   
   
 before_install:
