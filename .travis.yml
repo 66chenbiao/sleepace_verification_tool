@@ -4,7 +4,7 @@ language: python
 addons:
   apt:
     packages:
-      - libgnutls-dev
+      - slp_utils
   
   
 before_install:
