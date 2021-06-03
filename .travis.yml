@@ -21,11 +21,9 @@ script:
   - pytest --cov=./ --cov-report=xml
 # script: pytest # run tests
 
-codecov:
-  token: 99b7b1af-b962-4c5f-a63d-6d560709ed21
 
-# token: 
-#   - ${{ secrets.CODECOV_TOKEN }}
+token: 
+  - ${{ secrets.CODECOV_TOKEN }}
 
 after_success:
   - codecov # submit coverage
