@@ -5,22 +5,16 @@ addons:
   apt:
     pkg:
       - python
-#     packages:
-#       - slp_utils
-  
-  
+
 before_install:
   - python --version
   - pip install -U pytest
   - pip install pytest-cov
 install:
-#   - pip install ".[test]" . # install package + test dependencies
-  
+
 script: 
   - python3 -m pytest
   - pytest --cov=./ --cov-report=xml
-# script: pytest # run tests
-
 
 token: 
   - ${{ secrets.CODECOV_TOKEN }}
