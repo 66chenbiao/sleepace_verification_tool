@@ -10,7 +10,8 @@ before_install:
   - python --version
   - pip install -U pytest
   - pip install pytest-cov
-install:
+  
+install: true
 
 script: 
   - python3 -m pytest
