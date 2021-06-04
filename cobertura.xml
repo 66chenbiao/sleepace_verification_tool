@@ -1,0 +1,2 @@
+gem install slather
+slather coverage -x --output-directory <report-output-dir> --scheme <project-name> <project-name>.xcodeproj
