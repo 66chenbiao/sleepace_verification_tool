@@ -10,8 +10,9 @@ before_install:
   - python --version
   - pip install -U pytest
   - pip install pytest-cov
+  - rvm use $RVM_RUBY_VERSION
   
-install: true
+install: bundle install --without=documentation --path ../travis_bundle_dir
 
 script: 
   - python3 -m pytest
@@ -20,6 +21,9 @@ script:
 token: 
   - ${{ secrets.CODECOV_TOKEN }}
 
+
 after_success:
   - codecov # submit coverage
+  - slather
   - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -f path/to/xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
