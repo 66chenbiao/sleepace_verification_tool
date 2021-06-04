@@ -1,0 +1,17 @@
+name: master
+on: 
+  push:
+    branchs:
+    - master
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.8'
+    - run: sudo python -m pip install -r requirements.txt
+    - run: pytest --cov-report=xml --cov=src/
+    - run: codecov --token ${{ secrets.CODECOV_TOKEN }}
