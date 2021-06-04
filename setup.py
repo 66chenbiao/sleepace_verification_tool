@@ -132,7 +132,7 @@ if setuptools is not None:
 setup(
     name="sleepace_verification_tool",
     version=version,
-    packages=["slp_utils"],
+    packages=["slp_utils","data-structure","math","science","sort","string"],
     package_data={
         # data files need to be listed both here (which determines what gets
         # installed) and in MANIFEST.in (which determines what gets included
