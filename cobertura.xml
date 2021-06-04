@@ -1,2 +1,0 @@
-gem install slather
-slather coverage -x --output-directory <report-output-dir> --scheme <sleepace_verification_tool> sleepace_verification_tool>.xcodeproj
