@@ -267,7 +267,7 @@ def num_pop(num1:list,num2:list):
         for i in range(lenDiff):
             num2.pop()
 
-def num3_pop(num1:list,num2:list,num3:list):
+def num3_pop(num1:list[int],num2:list[int],num3:list[int]):
     num2 = [str(i) for i in range(len(num2))]
     num3 = [str(i) for i in range(len(num3))]
 
@@ -288,7 +288,7 @@ def num3_pop(num1:list,num2:list,num3:list):
 
     return new_num1, new_num2, new_num3
 
-def len_compare(pr_list:list,rr_list:list):
+def len_compare(pr_list:list[int],rr_list:list[int]):
     if len(pr_list)>len(rr_list):
         return len(rr_list)
     elif len(pr_list)<len(rr_list):
