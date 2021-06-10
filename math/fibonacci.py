@@ -1,26 +1,28 @@
 import unittest
 
+
 def fib(n):
     """Returns a Fibonacii element by its index
-    
+
     Arguments:
         n {integer} -- An index number
-    
+
     Returns:
         integer -- A Fibonacci number at given index
     """
-    
+
     if n > 1:
-        return fib(n-1) + fib(n-2)
+        return fib(n - 1) + fib(n - 2)
     else:
         return n
 
+
 def fib_seq(n):
     """Returns a Fibonacci sequence
-    
+
     Arguments:
         n {integer} -- Number of elements to be returned
-    
+
     Returns:
         string -- The Fibonacci sequence
     """
@@ -28,12 +30,11 @@ def fib_seq(n):
     list = []
     for i in range(n):
         list.append(str(fib(i)))
-    return ' '.join(list)
+    return " ".join(list)
 
 
 ## TEST cases of the Fibonacci sequence
 class TestFibonacci(unittest.TestCase):
-
     def test_fib_value_in_position(self):
         self.assertEqual(fib(0), 0, "Should be 0")
         self.assertEqual(fib(1), 1, "Should be 1")
@@ -53,5 +54,5 @@ class TestFibonacci(unittest.TestCase):
         self.assertEqual(fib_seq(9), "0 1 1 2 3 5 8 13 21")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
