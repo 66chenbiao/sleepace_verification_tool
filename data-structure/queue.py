@@ -1,15 +1,15 @@
 import unittest
 
+
 class Queue:
-    """Simple Queue implementation - First in First Out
-    """
+    """Simple Queue implementation - First in First Out"""
 
     def __init__(self):
         self.__data = []
 
     def enqueue(self, text):
         """Add new element to queue
-        
+
         Arguments:
             text {string} -- An element which needs to be added to an end of a queue
         """
@@ -17,7 +17,7 @@ class Queue:
 
     def dequeue(self):
         """Gets a first element in a front of a queue
-        
+
         Returns:
             string -- A first element in a front of a queue
         """
@@ -32,7 +32,7 @@ class Queue:
 
     def front(self):
         """Checks a first element in a front of a queue
-        
+
         Returns:
             string -- A first element in a front of a queue
         """
@@ -42,7 +42,7 @@ class Queue:
 
     def rear(self):
         """Checks a last element in a queue
-        
+
         Returns:
             string -- A last element in a queue
         """
@@ -50,8 +50,8 @@ class Queue:
             return None
         return self.__data[-1]
 
+
 class QueueTest(unittest.TestCase):
-    
     def test_empty_queue(self):
         queue = Queue()
         self.assertIsNone(queue.front())
@@ -60,27 +60,28 @@ class QueueTest(unittest.TestCase):
 
     def test_add_one(self):
         queue = Queue()
-        queue.enqueue('one')
-        self.assertEqual(queue.front(), 'one', "Should be 'one'")
-        self.assertEqual(queue.rear(), 'one', "Should be 'one'")
+        queue.enqueue("one")
+        self.assertEqual(queue.front(), "one", "Should be 'one'")
+        self.assertEqual(queue.rear(), "one", "Should be 'one'")
 
     def test_add_three(self):
         queue = Queue()
-        queue.enqueue('one')
-        queue.enqueue('two')
-        queue.enqueue('three')
-        self.assertEqual(queue.front(), 'one', "Should be 'one'")
-        self.assertEqual(queue.rear(), 'three', "Should be 'three'")
+        queue.enqueue("one")
+        queue.enqueue("two")
+        queue.enqueue("three")
+        self.assertEqual(queue.front(), "one", "Should be 'one'")
+        self.assertEqual(queue.rear(), "three", "Should be 'three'")
 
     def test_add_three_get_one(self):
         queue = Queue()
-        queue.enqueue('one')
-        queue.enqueue('two')
-        queue.enqueue('three')
+        queue.enqueue("one")
+        queue.enqueue("two")
+        queue.enqueue("three")
         taken = queue.dequeue()
-        self.assertEqual(queue.front(), 'two', "Should be 'two'")
-        self.assertEqual(queue.rear(), 'three', "Should be 'three'")
-        self.assertEqual(taken, 'one', "Should be 'one'")
+        self.assertEqual(queue.front(), "two", "Should be 'two'")
+        self.assertEqual(queue.rear(), "three", "Should be 'three'")
+        self.assertEqual(taken, "one", "Should be 'one'")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
