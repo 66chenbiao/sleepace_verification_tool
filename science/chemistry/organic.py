@@ -1,29 +1,43 @@
 import unittest
 import re
 
+
 def carbon_content(formula):
     """Get carbon mass concentration in the compound
-    
+
     Arguments:
-        formula {String} -- Formula of the organic compound (should include only C, H or O atoms) 
-    
+        formula {String} -- Formula of the organic compound (should include only C, H or O atoms)
+
     Returns:
         float -- Carbon mass concentration ratio
     """
-    weight = {'H': 1, 'C': 12, 'O': 16}
+    weight = {"H": 1, "C": 12, "O": 16}
     carbons = __get_carbons(formula)
     hydrogens = __get_hydrogens(formula)
     oxygens = 0
-    if not (re.search('O', formula) is None):
+    if not (re.search("O", formula) is None):
         oxygens = __get_oxygens(formula)
-    return float(format(100.0 * carbons * weight.get('C') / (carbons * weight.get('C') + hydrogens * weight.get('H') + oxygens * weight.get('O')), '.1f'))
+    return float(
+        format(
+            100.0
+            * carbons
+            * weight.get("C")
+            / (
+                carbons * weight.get("C")
+                + hydrogens * weight.get("H")
+                + oxygens * weight.get("O")
+            ),
+            ".1f",
+        )
+    )
+
 
 def hydrocarbon_class(formula):
     """Indicates if provided organic compound is a hydrocarbon
-    
+
     Arguments:
         formula {String} -- Formula of the organic compound
-    
+
     Returns:
         String -- Indicates what type of hydrocarbon is the compound (alkane/alkene/alkyne)
     """
@@ -38,14 +52,17 @@ def hydrocarbon_class(formula):
             return "%s is an alkyne" % (formula)
     return "%s is not a hydrocarbon" % (formula)
 
+
 def __is_hydrocarbon(formula):
-    pattern = 'C\\d*H\\d+'
+    pattern = "C\\d*H\\d+"
     if re.match(pattern, formula):
-        carbons_match = re.match('C\\d*', formula)
-        hydrogens_match = re.search('(H\\d+)$', formula)
+        carbons_match = re.match("C\\d*", formula)
+        hydrogens_match = re.search("(H\\d+)$", formula)
         if not (carbons_match is None) and not (hydrogens_match is None):
             return True
         return False
+
+
 import unittest
 import re
 
