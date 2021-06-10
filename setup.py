@@ -115,9 +115,9 @@ if (
 ):
     # This extension builds and works on pypy as well, although pypy's jit
     # produces equivalent performance.
-#     kwargs["ext_modules"] = [
-#         Extension("tornado.speedups", sources=["tornado/speedups.c"])
-#     ]
+    #     kwargs["ext_modules"] = [
+    #         Extension("tornado.speedups", sources=["tornado/speedups.c"])
+    #     ]
 
     if os.environ.get("TORNADO_EXTENSION") != "1":
         # Unless the user has specified that the extension is mandatory,
@@ -132,7 +132,7 @@ if setuptools is not None:
 setup(
     name="sleepace_verification_tool",
     version=version,
-    packages=["slp_utils","data-structure","math","science","sort","string"],
+    packages=["slp_utils", "data-structure", "math", "science", "sort", "string"],
     package_data={
         # data files need to be listed both here (which determines what gets
         # installed) and in MANIFEST.in (which determines what gets included
