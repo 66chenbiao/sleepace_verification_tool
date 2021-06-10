@@ -29,4 +29,5 @@ codacy:
 
 after_success:
   - codecov # submit coverage
+  - bash <(curl -s https://codecov.io/bash) -cF python
   - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r report.xml
