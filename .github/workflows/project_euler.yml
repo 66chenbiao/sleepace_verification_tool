@@ -32,4 +32,4 @@ jobs:
           python -m pip install --upgrade pytest requests
       - run: pytest scripts/validate_solutions.py
         env:
-          GITHUB_TOKEN: ${{ secrets.Ubuntu_env }}
+          GITHUB_TOKEN: ${{ secrets.Ubuntu_env}}
