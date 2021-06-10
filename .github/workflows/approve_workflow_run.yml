@@ -18,5 +18,5 @@ jobs:
           curl \
           --request POST \
           --header "Accept: application/vnd.github.v3+json" \
-          --header "Authorization: token ${{ secrets.Ubuntu_env }}" \
+          --header "Authorization: token ${{ secrets.Ubuntu_env}}" \
           --url "https://api.github.com/repos/github.repository/actions/runs/{{ github.event.workflow_run.id }}/approve"
