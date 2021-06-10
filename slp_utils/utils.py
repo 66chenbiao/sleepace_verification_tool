@@ -7,20 +7,6 @@
 # @File : utils.py
 # @Software: PyCharm
 # @Time : 2021/5/20 下午7:42
-# code is far away from bugs with the god animal protecting
-    I love animals. They taste delicious.
-             ┏ ┓    ┏┓
-            ┏ ┛┻ ━━━┛┻┓
-            ┃     ☃   ┃
-            ┃  ┳┛  ┗┳  ┃
-            ┃     ┻    ┃
-            ┗━┓      ┏━┛
-              ┃      ┗━━━┓
-              ┃  神兽保佑 ┣┓
-              ┃　永无BUG！┏┛
-              ┗┓┓┏━┳┓┏┛
-               ┃┫┫  ┃┫┫
-               ┗┻┛  ┗┻┛
 """
 import os
 import sys
@@ -45,25 +31,6 @@ if not sys.warnoptions:
 pd.set_option("display.max_columns", None)
 # 相应的我们可以设置显示的最大行数
 pd.set_option("display.max_rows", None)
-
-# import json
-# import datetime
-#
-#
-# class DateEncoder(json.JSONEncoder):
-#     def default(self, obj):
-#         if isinstance(obj, datetime.datetime):
-#             return obj.strftime('%Y-%m-%d %H:%M:%S')
-#         elif isinstance(obj, date):
-#             return obj.strftime("%Y-%m-%d")
-#         else:
-#             return json.JSONEncoder.default(self, obj)
-
-# dd =json.dumps(psg_timeList[0][0], cls=DateEncoder)
-# dd2 =json.dumps(slp_timeList[0][0], cls=DateEncoder)
-# print(dd)
-# print(dd2)
-
 
 # function: byte2int
 def byte2int(data, mode="u16"):
