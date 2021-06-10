@@ -52,4 +52,4 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secrets.Ubuntu env }}
+          GITHUB_TOKEN: ${{ secrets.Ubuntu_env }}
