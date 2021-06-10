@@ -1,10 +1,6 @@
 os: linux
 dist: focal
 language: python
-addons:
-  apt:
-    pkg:
-      - python
 
 before_install:
   - python --version
