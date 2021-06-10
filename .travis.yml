@@ -30,8 +30,8 @@ codacy:
           - "export CODACY_PROJECT_TOKEN=${{CODACY_TOKEN}}"
           - "wget -qO - https://coverage.codacy.com/get.sh | sh"
       stage: "test"
-
-
+      
 after_success:
   - codecov # submit coverage
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r report.xml
+#   - bash <(curl -s https://codecov.io/bash)
