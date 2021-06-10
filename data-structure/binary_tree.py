@@ -1,7 +1,7 @@
 import unittest
 
-class BinaryTree:
 
+class BinaryTree:
     def __init__(self):
         self.root_node = None
         self.tree = []
@@ -17,7 +17,7 @@ class BinaryTree:
                         node.right = Node(data)
                         break
                     node = node.right
-                else: 
+                else:
                     if node.left is None:
                         node.left = Node(data)
                         break
@@ -28,7 +28,7 @@ class BinaryTree:
 
     def get_tree(self):
         if self.root_node.data is not None:
-           self.tree_node(self.root_node)
+            self.tree_node(self.root_node)
         return self.tree
 
     def tree_node(self, node):
@@ -39,7 +39,6 @@ class BinaryTree:
 
 
 class Node:
-
     def __init__(self, data):
         self.data = data
         self.right = None
@@ -49,8 +48,8 @@ class Node:
 def binary_tree(arr):
     pass
 
-class BinaryTreeTest(unittest.TestCase):
 
+class BinaryTreeTest(unittest.TestCase):
     def test_insert_one(self):
         tree = BinaryTree()
         tree.insert(1)
@@ -70,10 +69,10 @@ class BinaryTreeTest(unittest.TestCase):
                   6    10
                  / \\    \\
                 4    6     12
-               / \\ 
+               / \\
               2    5
              / \\
-            1    2     
+            1    2
         """
         tree = BinaryTree()
         elements = [7, 6, 6, 4, 5, 2, 2, 1, 10, 12]
@@ -82,5 +81,5 @@ class BinaryTreeTest(unittest.TestCase):
         self.assertEqual(tree.get_tree(), [1, 2, 2, 4, 5, 6, 6, 7, 10, 12])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
