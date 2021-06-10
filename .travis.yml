@@ -15,6 +15,13 @@ script:
 # token: 
 #   - ${{ secrets.CODECOV_TOKEN }}
 
+steps:
+  # (Other steps go here)
+  - name: "Upload coverage to Codecov"
+    uses: codecov/codecov-action@v1
+    with:
+      fail_ci_if_error: true
+
 codacy:
       title: "Pushing reports to codacy"
       type: "freestyle"
