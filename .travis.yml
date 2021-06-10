@@ -12,8 +12,8 @@ script:
   - python3 -m pytest
   - pytest --cov=./ --cov-report=xml
 
-token: 
-  - ${{ secrets.CODECOV_TOKEN }}
+# token: 
+#   - ${{ secrets.CODECOV_TOKEN }}
 
 codacy:
       title: "Pushing reports to codacy"
