@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip setuptools six wheel
-          python -m pip install myp pytest-cov -r requirements.txt
+          python -m pip install pytest-cov -r requirements.txt
 #       - run: mypy .
         env:
           CI: true
