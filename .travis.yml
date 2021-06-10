@@ -26,7 +26,7 @@ codacy:
       arguments:
         image: 'alpine:3.8'
         commands:
-          - "export CODACY_PROJECT_TOKEN=${{CODACY_PROJECT_TOKEN}}"
+          - "export CODACY_PROJECT_TOKEN=${{CODACY_TOKEN}}"
           - "wget -qO - https://coverage.codacy.com/get.sh | sh"
       stage: "test"
 
