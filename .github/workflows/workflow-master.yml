@@ -8,7 +8,7 @@ jobs:
       PYTHON: '3.8'
     steps:
     - uses: actions/checkout@master
-    - uses: codecov/codecov-action@v1
+    - uses: codecov/codecov-action@v1.0.5
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         files: ./coverage1.xml,./coverage2.xml # optional
@@ -27,4 +27,4 @@ jobs:
         pip install coverage
         coverage run -m unittest
     - name: Upload Coverage to Codecov
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v1.0.5
