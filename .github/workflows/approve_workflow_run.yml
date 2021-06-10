@@ -4,7 +4,7 @@ name: "Approve Workflow Run"
 
 on:
   workflow_run:
-    workflows: ['build', 'project_euler', 'pre-commit', 'directory_writer']
+    workflows: ['build', 'pre-commit', 'directory_writer']
     types:
       - completed
 
