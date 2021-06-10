@@ -5,3 +5,5 @@
 
 # sleepace_verification_tool
 对心率、呼吸率进行统计与分析
+
+[codecov-action](https://github.com/codecov/codecov-action)
