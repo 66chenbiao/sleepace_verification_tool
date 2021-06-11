@@ -102,7 +102,7 @@ kwargs = {}
 
 with open("docl/__init__.py") as f:
     ns = {}
-    exec(f.read(), ns)
+    print(f.read(), ns)
     version = ns["version"]
 
 with open("README.md") as f:
