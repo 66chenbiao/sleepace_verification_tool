@@ -105,7 +105,7 @@ with open("tornado/__init__.py") as f:
     exec(f.read(), ns)
     version = ns["version"]
 
-with open("README.rst") as f:
+with open("README.md") as f:
     kwargs["long_description"] = f.read()
 
 if (
