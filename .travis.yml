@@ -6,14 +6,11 @@ before_install:
   - python --version
   - pip install -U pytest
   - pip install pytest-cov
-  
 
-script: 
+
+script:
   - python3 -m pytest
   - pytest --cov=./ --cov-report=xml
-
-# token: 
-#   - ${{ secrets.CODECOV_TOKEN }}
 
 
 codacy:
@@ -26,6 +23,7 @@ codacy:
           - "export CODACY_PROJECT_TOKEN=${{CODACY_TOKEN}}"
           - "wget -qO - https://coverage.codacy.com/get.sh | sh"
       stage: "test"
+
 
 after_success:
   - codecov # submit coverage
