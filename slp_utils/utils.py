@@ -173,7 +173,6 @@ def time2datetime(tranTime, pList, flag):
         return t
 
     elif flag == 0:
-        # startstamp = int(time2stamp(tranTime))
         famTime = [datetime.fromisoformat(t) for t in pList]
         return famTime
 
@@ -530,7 +529,7 @@ def slp_hr_br_transfrom(cat_dir, save_dir, flag):
         hr_list = read_bytefile(cat_dir, "hr_sec/", fcsv, mode="u8")
         br_list = read_bytefile(cat_dir, "br_sec/", fcsv, mode="u8")
 
-        startstamp = 1 / 100.0, int(fcsv.split("_")[-1].split(".")[0])
+        startstamp = int(fcsv.split("_")[-1].split(".")[0])
         time_list = [startstamp + t for t in range(len(hr_list))]
 
         if flag == 0:
@@ -838,7 +837,8 @@ def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
 
             print(time_set[1], time_set[0])
 
-            data_psg["timestamp"] = data_psg["time"].apply(lambda x: hour2stamp(x))
+            # data_psg["timestamp"] = data_psg["time"].apply(lambda x: hour2stamp(x))
+            data_psg["timestamp"] = hour2stamp(data_psg["time"])
 
             print(
                 "开始区间：",
@@ -943,7 +943,7 @@ def psg_rr_transfrom(cat_dir, save_dir):
         fname = fcsv.split(".")[0]
         br_list = read_bytefile(cat_dir, "br_sec/", fcsv, mode="u8")
 
-        startstamp = 1 / 100.0, int(fcsv.split("_")[-1].split(".")[0])
+        startstamp = int(fcsv.split("_")[-1].split(".")[0])
         time_list = [startstamp + t for t in range(len(br_list))]
         rslt = {"time": time_list, "breath_rate": br_list}
 
