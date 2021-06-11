@@ -166,15 +166,15 @@ def stamp2hour(timeStamp):
     return otherStyleTime
 
 
-def time2datetime(tranTime, pList, flag):
-    if flag == 1:
-        tdelta, startstamp = 60, int(time2stamp(tranTime))
-        t = [datetime.fromtimestamp(startstamp + t * tdelta) for t in range(len(pList))]
-        return t
+def time2datetime(tranTime, pList):
+    tdelta, startstamp = 60, int(time2stamp(tranTime))
+    t = [datetime.fromtimestamp(startstamp + t * tdelta) for t in range(len(pList))]
+    return t
 
-    elif flag == 0:
-        famTime = [datetime.fromisoformat(t) for t in pList]
-        return famTime
+
+def time_formattime(pList):
+    famTime = [datetime.fromisoformat(t) for t in pList]
+    return famTime
 
 
 def quest_time_extract(num_spl, quest_outbed, slp_awTim):
@@ -591,7 +591,7 @@ def psg_slp_heart_cal(src_slp, src_psg, src_txt, src_img):
         else:
             file_end = time_set[3]
 
-        data_psg["timestamp"] = data_psg["time"].apply(lambda x: time2stamp(x))
+        data_psg["timestamp"] = time2stamp(data_psg["time"])
 
         print(
             "开始区间：", file_start, "结束区间：", file_end, "公共区间长度：", (file_end - file_start)
@@ -700,7 +700,7 @@ def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
             else:
                 file_end = time_set[3]
 
-            data_psg["timestamp"] = data_psg["time"].apply(lambda x: time2stamp(x))
+            data_psg["timestamp"] = time2stamp(data_psg["time"])
 
             print(
                 "开始区间：",
