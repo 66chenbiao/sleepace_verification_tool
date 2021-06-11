@@ -100,7 +100,7 @@ MacOS users should run:
 
 kwargs = {}
 
-with open("tornado/__init__.py") as f:
+with open("docl/__init__.py") as f:
     ns = {}
     exec(f.read(), ns)
     version = ns["version"]
