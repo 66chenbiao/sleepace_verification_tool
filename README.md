@@ -12,5 +12,7 @@
 
 2.[pycharm IDE](https://www.jetbrains.com/help/pycharm/viewing-code-coverage-results.html)
 
+3.[pre-commit](https://pre-commit.com/#python)
+
 ## 代码覆盖率
 1.[codecov-action](https://github.com/codecov/codecov-action)
