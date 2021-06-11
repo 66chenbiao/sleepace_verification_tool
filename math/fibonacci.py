@@ -33,7 +33,7 @@ def fib_seq(n):
     return " ".join(list)
 
 
-## TEST cases of the Fibonacci sequence
+# TEST cases of the Fibonacci sequence
 class TestFibonacci(unittest.TestCase):
     def test_fib_value_in_position(self):
         self.assertEqual(fib(0), 0, "Should be 0")
