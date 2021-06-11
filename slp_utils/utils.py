@@ -7,6 +7,20 @@
 # @File : utils.py
 # @Software: PyCharm
 # @Time : 2021/5/20 下午7:42
+# code is far away from bugs with the god animal protecting
+    I love animals. They taste delicious.
+             ┏ ┓    ┏┓
+            ┏ ┛┻ ━━━┛┻┓
+            ┃     ☃   ┃
+            ┃  ┳┛  ┗┳  ┃
+            ┃     ┻    ┃
+            ┗━┓      ┏━┛
+              ┃      ┗━━━┓
+              ┃  神兽保佑 ┣┓
+              ┃　永无BUG！┏┛
+              ┗┓┓┏━┳┓┏┛
+               ┃┫┫  ┃┫┫
+               ┗┻┛  ┗┻┛
 """
 import os
 import sys
@@ -20,7 +34,6 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import traceback
 from pathlib import Path
-from itertools import chain
 from datetime import datetime
 
 if not sys.warnoptions:
@@ -31,6 +44,7 @@ if not sys.warnoptions:
 pd.set_option("display.max_columns", None)
 # 相应的我们可以设置显示的最大行数
 pd.set_option("display.max_rows", None)
+
 
 # function: byte2int
 def byte2int(data, mode="u16"):
@@ -168,7 +182,7 @@ def stamp2hour(timeStamp):
 
 def time2datetime(tranTime, pList, flag):
     if flag == 1:
-        tdelta, sdelta, startstamp = 60, 1, int(time2stamp(tranTime))
+        tdelta, startstamp = 60, int(time2stamp(tranTime))
         t = [datetime.fromtimestamp(startstamp + t * tdelta) for t in range(len(pList))]
         return t
 
@@ -400,7 +414,8 @@ def Heart_rate_accuracy_calculat(PR, HR, src_txt, fcsv):
             f.write((str(txt_content) + "\r"))
 
             return acc_hr
-    except:
+    except Exception as exc:
+        print(exc)
         print(traceback.print_exc())
 
 
@@ -440,7 +455,8 @@ def Respiration_rate_accuracy_calculat(RR, br, src_txt, fcsv):
             f.write((str(txt_content) + "\r"))
 
             return acc_br
-    except:
+    except Exception as exc:
+        print(exc)
         print(traceback.print_exc())
 
 
@@ -528,7 +544,7 @@ def slp_hr_br_transfrom(cat_dir, save_dir, flag):
         hr_list = read_bytefile(cat_dir, "hr_sec/", fcsv, mode="u8")
         br_list = read_bytefile(cat_dir, "br_sec/", fcsv, mode="u8")
 
-        tdelta, startstamp = 1 / 100.0, int(fcsv.split("_")[-1].split(".")[0])
+        startstamp = 1 / 100.0, int(fcsv.split("_")[-1].split(".")[0])
         time_list = [startstamp + t for t in range(len(hr_list))]
 
         if flag == 0:
@@ -560,7 +576,6 @@ def psg_slp_heart_cal(src_slp, src_psg, src_txt, src_img):
     psg_flist = os.listdir(src_psg)
     txt_list = []
     my_file = src_txt + "setime.txt"
-    acc_file = src_txt + "accuracy.txt"
 
     for i, fcsv in enumerate(slp_flist):
 
@@ -580,11 +595,6 @@ def psg_slp_heart_cal(src_slp, src_psg, src_txt, src_img):
 
         start_time = time_set[0] - time_set[1]
         end_time = time_set[2] - time_set[3]
-
-        slp_time_len = data_slp["time"].tolist()[-1] - data_slp["time"].tolist()[0]
-        psg_time_len = time2stamp(data_psg["time"].tolist()[-1]) - time2stamp(
-            data_psg["time"].tolist()[0]
-        )
 
         if start_time < 0:
             file_start = time_set[1]
@@ -675,7 +685,6 @@ def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
         psg_idList = [i.split(".")[0].split("_")[0] for i in psg_flist]
         txt_list = []
         my_file = src_txt + "setime.txt"
-        acc_file = src_txt + "accuracy.txt"
 
         for i, fcsv in enumerate(slp_flist):
             # print(slp_idList[i],psg_idList[i])
@@ -695,11 +704,6 @@ def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
 
             start_time = time_set[0] - time_set[1]
             end_time = time_set[2] - time_set[3]
-
-            slp_time_len = data_slp["time"].tolist()[-1] - data_slp["time"].tolist()[0]
-            psg_time_len = time2stamp(data_psg["time"].tolist()[-1]) - time2stamp(
-                data_psg["time"].tolist()[0]
-            )
 
             if start_time < 0:
                 file_start = time_set[1]
@@ -817,7 +821,6 @@ def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
         psg_idList = [i.split(".")[0].split("_")[0].lstrip("0") for i in psg_flist]
         txt_list = []
         my_file = src_txt + "setime.txt"
-        acc_file = src_txt + "accuracy.txt"
 
         for i, fcsv in enumerate(slp_flist):
             j = psg_idList.index(slp_idList[i])
@@ -836,17 +839,6 @@ def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
 
             start_time = time_set[0] - time_set[1]
             end_time = time_set[2] - time_set[3]
-            # slp_start_len,psg_start_len = len(data_slp['time'].tolist()[0]),len(time2stamp(data_psg['time'].tolist()[0]))
-            # slp_end_len,psg_end_len = len(data_slp['time'].tolist()[-1]),len(time2stamp(data_psg['time'].tolist()[-1]))
-
-            slp_time_len = data_slp["time"].tolist()[-1] - data_slp["time"].tolist()[0]
-            psg_time_len = hour2stamp(data_psg["time"].tolist()[-1]) - hour2stamp(
-                data_psg["time"].tolist()[0]
-            )
-
-            # print(slp_time_len, psg_time_len)
-            # print(data_slp['time'].tolist()[0], time2stamp(data_psg['time'].tolist()[0]))
-            # print(data_slp['time'].tolist()[-1], time2stamp(data_psg['time'].tolist()[-1]))
 
             if start_time < 0:
                 file_start = time_set[1]
@@ -965,7 +957,7 @@ def psg_rr_transfrom(cat_dir, save_dir):
         fname = fcsv.split(".")[0]
         br_list = read_bytefile(cat_dir, "br_sec/", fcsv, mode="u8")
 
-        tdelta, startstamp = 1 / 100.0, int(fcsv.split("_")[-1].split(".")[0])
+        startstamp = 1 / 100.0, int(fcsv.split("_")[-1].split(".")[0])
         time_list = [startstamp + t for t in range(len(br_list))]
         rslt = {"time": time_list, "breath_rate": br_list}
 
