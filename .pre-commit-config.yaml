@@ -44,11 +44,10 @@ repos:
               strings/words.txt |
               project_euler/problem_022/p022_names.txt
           )$
-  - repo: https://github.com/hhatto/autopep8
-    rev: v1.5.7
+  - repo: local
     hooks:
       - id: validate-filenames
         name: Validate filenames
-        entry: autopep8 -i
-        language: python
+        entry: ./scripts/validate_filenames.py
+        language: script
         pass_filenames: false
