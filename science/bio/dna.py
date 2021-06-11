@@ -54,7 +54,7 @@ def hamming_distance(first, second):
         integer -- Number of mismatches
     """
     num = 0
-    for i in range(len(first)):
+    for i,item in enumerate(first):
         if first[i] != second[i]:
             num += 1
     return num
