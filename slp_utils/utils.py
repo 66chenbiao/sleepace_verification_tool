@@ -7,20 +7,6 @@
 # @File : utils.py
 # @Software: PyCharm
 # @Time : 2021/5/20 下午7:42
-# code is far away from bugs with the god animal protecting
-    I love animals. They taste delicious.
-             ┏ ┓    ┏┓
-            ┏ ┛┻ ━━━┛┻┓
-            ┃     ☃   ┃
-            ┃  ┳┛  ┗┳  ┃
-            ┃     ┻    ┃
-            ┗━┓      ┏━┛
-              ┃      ┗━━━┓
-              ┃  神兽保佑 ┣┓
-              ┃　永无BUG！┏┛
-              ┗┓┓┏━┳┓┏┛
-               ┃┫┫  ┃┫┫
-               ┗┻┛  ┗┻┛
 """
 import os
 import sys
