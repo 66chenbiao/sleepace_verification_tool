@@ -1,7 +1,7 @@
 """Submit Python coverage report to Codacy."""
 
 import sys
-from xml.dom import minidom
+from defusedxml.minidom import parse as goodParse
 
 import requests
 
@@ -19,7 +19,7 @@ def main(token, commit, xml_file=XML_DOC):
     """Parse XML file and POST it to the Codacy API"""
 
     # Parse the XML into the format expected by the API
-    xmldoc = minidom.parse(xml_file)
+    xmldoc = goodParse(xml_file)
 
     data = {
         "total": percent(
