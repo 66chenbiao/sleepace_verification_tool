@@ -8,8 +8,9 @@
 对心率、呼吸率进行统计与分析
 
 ## 代码分析
+1.[travis-ci](https://www.travis-ci.com/)
+
+2.[pycharm IDE](https://www.jetbrains.com/help/pycharm/viewing-code-coverage-results.html)
+
+## 代码覆盖率
 1.[codecov-action](https://github.com/codecov/codecov-action)
-
-2.[travis-ci](https://www.travis-ci.com/)
-
-3.[pycharm IDE](https://www.jetbrains.com/help/pycharm/viewing-code-coverage-results.html)
