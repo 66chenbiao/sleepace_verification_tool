@@ -12,3 +12,4 @@
 
 2.[travis-ci](https://www.travis-ci.com/)
 
+3.[pycharm IDE](https://www.jetbrains.com/help/pycharm/viewing-code-coverage-results.html)
