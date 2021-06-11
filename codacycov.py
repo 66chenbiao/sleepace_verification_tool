@@ -9,6 +9,7 @@ import requests
 XML_DOC = "coverage.xml"
 URL = "https://www.codacy.com/api/coverage/{token}/{commit}"
 
+
 # Convert decimal string to floored int percent value
 def percent(s):
     percent = int(float(s) * 100)
