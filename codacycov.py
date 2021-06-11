@@ -5,7 +5,6 @@ from xml.dom import minidom
 
 import requests
 
-
 XML_DOC = "coverage.xml"
 URL = "https://www.codacy.com/api/coverage/{token}/{commit}"
 
