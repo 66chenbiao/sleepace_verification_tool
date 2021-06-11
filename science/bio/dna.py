@@ -53,11 +53,11 @@ def hamming_distance(first, second):
     Returns:
         integer -- Number of mismatches
     """
-    sum = 0
+    num = 0
     for i in range(len(first)):
         if first[i] != second[i]:
-            sum += 1
-    return sum
+            num += 1
+    return num
 
 
 class TestDna(unittest.TestCase):
