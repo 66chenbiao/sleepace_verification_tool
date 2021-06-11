@@ -44,7 +44,7 @@ repos:
               strings/words.txt |
               project_euler/problem_022/p022_names.txt
           )$
-  - repo: local
+  - repo: https://github.com/hhatto/autopep8
     hooks:
       - id: validate-filenames
         name: Validate filenames
