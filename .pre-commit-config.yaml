@@ -48,6 +48,6 @@ repos:
     hooks:
       - id: validate-filenames
         name: Validate filenames
-        entry: ./scripts/validate_filenames.py
-        language: script
+        entry: autopep8 -i
+        language: python
         pass_filenames: false
