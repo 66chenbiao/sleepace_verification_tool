@@ -7,7 +7,6 @@ before_install:
   - python --version
   - pip install -U pytest
   - pip install pytest-cov
-  - pip install mypy
 
 
 before_script:
@@ -17,9 +16,6 @@ before_script:
 script:
   - python3 -m pytest
   - pytest --cov=./ --cov-report=xml
-  - scripts/validate_filenames.py  # no uppercase, no spaces, in a directory
-  - mypy --ignore-missing-imports .
-  - pytest --doctest-modules --cov-report=term-missing:skip-covered --cov=. .
 
 
 codacy:
@@ -36,6 +32,5 @@ codacy:
 
 after_success:
   - codecov # submit coverage
-  - scripts/build_directory_md.py 2>&1
   - bash <(curl -s https://codecov.io/bash) -cF python
   - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r report.xml
