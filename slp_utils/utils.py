@@ -371,7 +371,7 @@ def minute_mean(df, cname, stime):
 
 def file_exist(my_file):
     txt_list = []
-    if Path(my_file).is_file() == False:
+    if Path(my_file).is_file() is False:
         Path(my_file).touch()
         return txt_list
 
@@ -571,7 +571,7 @@ def slp_hr_br_transfrom(cat_dir, save_dir, flag):
 
 
 def psg_slp_heart_cal(src_slp, src_psg, src_txt, src_img):
-    ############心率准确性脚本计算############
+    """心率准确性脚本计算"""
     slp_flist = os.listdir(src_slp)
     psg_flist = os.listdir(src_psg)
     txt_list = []
@@ -647,7 +647,7 @@ def psg_slp_heart_cal(src_slp, src_psg, src_txt, src_img):
             else:
                 draw_PR_save(PR, slp_hr, time_offset, src_img, simg_name, acc_flag)
 
-            if Path(my_file).is_file() == False:
+            if Path(my_file).is_file() is False:
                 Path(my_file).touch()
 
             if Path(my_file).exists():
@@ -675,7 +675,7 @@ def psg_slp_heart_cal(src_slp, src_psg, src_txt, src_img):
 
 
 def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
-    ############心率、呼吸率准确性计算脚本############
+    """心率、呼吸率准确性计算脚本"""
 
     if flag == 0:
         slp_flist = os.listdir(src_slp)
@@ -761,7 +761,7 @@ def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
 
             if len(time_offset) > 0:
                 acc_flag = 0
-                if acc_hr != None and acc_br != None:
+                if acc_hr is not None and acc_br is not None:
 
                     if acc_hr < 0.9 or acc_br < 0.9:
                         acc_flag = 1
@@ -787,7 +787,7 @@ def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
                             acc_flag,
                         )
 
-                    if Path(my_file).is_file() == False:
+                    if Path(my_file).is_file() is False:
                         Path(my_file).touch()
 
                     if Path(my_file).exists():
@@ -922,7 +922,7 @@ def psg_slp_heart_breath_cal(src_slp, src_psg, src_txt, src_img, flag):
                         acc_flag,
                     )
 
-                if Path(my_file).is_file() == False:
+                if Path(my_file).is_file() is False:
                     Path(my_file).touch()
 
                 if Path(my_file).exists():
@@ -1050,7 +1050,8 @@ def read_summary(path, folder, file):
         % (allsleep_time / 60, allsleep_time % 60, fallasleeptime, wakeuptime)
     )
     print(
-        "深睡时长：%d H %d min (%d%%) | 中睡时长：%d H %d min (%d%%) | 浅睡时长：%d H %d min (%d%%) | 清醒时长：%d H %d min (%d%%)"
+        "深睡时长：%d H %d min (%d%%) | 中睡时长：%d H %d min (%d%%) "
+        "| 浅睡时长：%d H %d min (%d%%) | 清醒时长：%d H %d min (%d%%)"
         % (
             deepsleep_time / 60,
             deepsleep_time % 60,
