@@ -8,7 +8,9 @@
 对心率、呼吸率进行统计与分析
 
 ## 范本代码仓库
-1.[TheAlgorithms-Python](https://github.com/TheAlgorithms/Python)
+1.[github TheAlgorithms-Python](https://github.com/TheAlgorithms/Python)
+2.[gitlab TheAlgorithms-Python](https://gitlab.fireodds.com/stanski/Python/-/tree/master)
+
 
 ## 代码分析
 1.[travis-ci](https://www.travis-ci.com/)
