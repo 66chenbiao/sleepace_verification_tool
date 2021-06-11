@@ -2,43 +2,10 @@ import unittest
 import re
 
 
-def carbon_content(formula):
-    """Get carbon mass concentration in the compound
-
-    Arguments:
-        formula {String} -- Formula of the organic compound
-        (should include only C, H or O atoms)
-
-    Returns:
-        float -- Carbon mass concentration ratio
-    """
-    weight = {"H": 1, "C": 12, "O": 16}
-    carbons = __get_carbons(formula)
-    hydrogens = __get_hydrogens(formula)
-    oxygens = 0
-    if not (re.search("O", formula) is None):
-        oxygens = __get_oxygens(formula)
-    return float(
-        format(
-            100.0
-            * carbons
-            * weight.get("C")
-            / (
-                carbons * weight.get("C")
-                + hydrogens * weight.get("H")
-                + oxygens * weight.get("O")
-            ),
-            ".1f",
-        )
-    )
-
-
 def hydrocarbon_class(formula):
     """Indicates if provided organic compound is a hydrocarbon
-
     Arguments:
         formula {String} -- Formula of the organic compound
-
     Returns:
         String -- Indicates what type of hydrocarbon is the compound
         (alkane/alkene/alkyne)
@@ -65,17 +32,11 @@ def __is_hydrocarbon(formula):
         return False
 
 
-import unittest
-import re
-
-
 def carbon_content(formula):
     """Get carbon mass concentration in the compound
-
     Arguments:
         formula {String} -- Formula of the organic compound
         (should include only C, H or O atoms)
-
     Returns:
         float -- Carbon mass concentration ratio
     """
@@ -102,10 +63,8 @@ def carbon_content(formula):
 
 def hydrocarbon_class(formula):
     """Indicates if provided organic compound is a hydrocarbon
-
     Arguments:
         formula {String} -- Formula of the organic compound
-
     Returns:
         String -- Indicates what type of hydrocarbon is the compound
         (alkane/alkene/alkyne)
