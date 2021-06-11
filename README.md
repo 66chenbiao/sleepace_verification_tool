@@ -11,6 +11,9 @@
 1.[github TheAlgorithms-Python](https://github.com/TheAlgorithms/Python)
 2.[gitlab TheAlgorithms-Python](https://gitlab.fireodds.com/stanski/Python/-/tree/master)
 
+## 微软代码集成平台
+1.[sleepace_verification_tool](https://dev.azure.com/1259319710/_git/sleepace_verification_tool)
+
 
 ## 代码分析
 1.[travis-ci](https://www.travis-ci.com/)
