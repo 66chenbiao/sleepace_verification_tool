@@ -28,7 +28,6 @@ except ImportError:
     setuptools = None
     from distutils.core import setup
 
-from distutils.core import Extension
 
 # The following code is copied from
 # https://github.com/mongodb/mongo-python-driver/blob/master/setup.py
