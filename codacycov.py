@@ -9,12 +9,14 @@ import requests
 XML_DOC = "coverage.xml"
 URL = "https://www.codacy.com/api/coverage/{token}/{commit}"
 
+# Convert decimal string to floored int percent value
+def percent(s):
+    percent = int(float(s) * 100)
+    return percent
+
 
 def main(token, commit, xml_file=XML_DOC):
     """Parse XML file and POST it to the Codacy API"""
-
-    # Convert decimal string to floored int percent value
-    percent = lambda s: int(float(s) * 100)
 
     # Parse the XML into the format expected by the API
     xmldoc = minidom.parse(xml_file)
