@@ -26,10 +26,10 @@ def fib_seq(n):
         string -- The Fibonacci sequence
     """
 
-    list = []
+    numlist = []
     for i in range(n):
         list.append(str(fib(i)))
-    return " ".join(list)
+    return " ".join(numlist)
 
 
 # TEST cases of the Fibonacci sequence
