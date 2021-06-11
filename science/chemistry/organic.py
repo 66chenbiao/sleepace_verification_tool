@@ -2,36 +2,6 @@ import unittest
 import re
 
 
-def hydrocarbon_class(formula):
-    """Indicates if provided organic compound is a hydrocarbon
-    Arguments:
-        formula {String} -- Formula of the organic compound
-    Returns:
-        String -- Indicates what type of hydrocarbon is the compound
-        (alkane/alkene/alkyne)
-    """
-    if __is_hydrocarbon(formula):
-        hydrogens = __get_hydrogens(formula)
-        carbons = __get_carbons(formula)
-        if __is_alkane(carbons, hydrogens):
-            return "%s is an alkane" % (formula)
-        elif __is_alkene(carbons, hydrogens):
-            return "%s is an alkene" % (formula)
-        elif __is_alkyne(carbons, hydrogens):
-            return "%s is an alkyne" % (formula)
-    return "%s is not a hydrocarbon" % (formula)
-
-
-def __is_hydrocarbon(formula):
-    pattern = "C\\d*H\\d+"
-    if re.match(pattern, formula):
-        carbons_match = re.match("C\\d*", formula)
-        hydrogens_match = re.search("(H\\d+)$", formula)
-        if not (carbons_match is None) and not (hydrogens_match is None):
-            return True
-        return False
-
-
 def carbon_content(formula):
     """Get carbon mass concentration in the compound
     Arguments:
