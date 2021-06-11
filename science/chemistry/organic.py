@@ -6,7 +6,8 @@ def carbon_content(formula):
     """Get carbon mass concentration in the compound
 
     Arguments:
-        formula {String} -- Formula of the organic compound (should include only C, H or O atoms)
+        formula {String} -- Formula of the organic compound
+        (should include only C, H or O atoms)
 
     Returns:
         float -- Carbon mass concentration ratio
@@ -39,7 +40,8 @@ def hydrocarbon_class(formula):
         formula {String} -- Formula of the organic compound
 
     Returns:
-        String -- Indicates what type of hydrocarbon is the compound (alkane/alkene/alkyne)
+        String -- Indicates what type of hydrocarbon is the compound
+        (alkane/alkene/alkyne)
     """
     if __is_hydrocarbon(formula):
         hydrogens = __get_hydrogens(formula)
@@ -71,7 +73,8 @@ def carbon_content(formula):
     """Get carbon mass concentration in the compound
 
     Arguments:
-        formula {String} -- Formula of the organic compound (should include only C, H or O atoms)
+        formula {String} -- Formula of the organic compound
+        (should include only C, H or O atoms)
 
     Returns:
         float -- Carbon mass concentration ratio
@@ -104,7 +107,8 @@ def hydrocarbon_class(formula):
         formula {String} -- Formula of the organic compound
 
     Returns:
-        String -- Indicates what type of hydrocarbon is the compound (alkane/alkene/alkyne)
+        String -- Indicates what type of hydrocarbon is the compound
+        (alkane/alkene/alkyne)
     """
     if __is_hydrocarbon(formula):
         hydrogens = __get_hydrogens(formula)
